@@ -1,0 +1,12 @@
+.section-title {
+  margin-bottom: 3rem;
+}
+
+.section-title h2 {
+  margin: 0;
+
+  font-size: clamp(2rem, 5vw, 4rem);
+  line-height: 1;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+}
