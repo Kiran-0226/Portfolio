@@ -1,0 +1,75 @@
+#certificates {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 7rem 2rem;
+}
+
+#certificates > div:last-child {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+#certificates article {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  padding: 2rem;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 1rem;
+
+  background: rgba(255, 255, 255, 0.03);
+
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    background 0.25s ease;
+}
+
+#certificates article:hover {
+  transform: translateY(-4px);
+
+  border-color: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+#certificates article h3 {
+  margin: 0;
+  font-size: 1.3rem;
+}
+
+#certificates article p {
+  margin: 0.75rem 0 0;
+
+  color: rgba(255, 255, 255, 0.6);
+}
+
+#certificates article span {
+  margin-top: 0.5rem;
+
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+#certificates article a {
+  margin-top: 1.5rem;
+
+  color: #ffffff;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+@media (max-width: 768px) {
+  #certificates {
+    padding: 5rem 1rem;
+  }
+
+  #certificates > div:last-child {
+    grid-template-columns: 1fr;
+  }
+}
