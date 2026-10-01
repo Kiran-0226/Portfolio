@@ -16,9 +16,12 @@ function Projects() {
         "REST API",
       ],
       status: "ACTIVE",
-      github: "https://github.com/Kiran-0226/KrishiBandhu",
-      demo: "https://krishibandhu-frontend.onrender.com/login",
+      github:
+        "https://github.com/Kiran-0226/KrishiBandhu",
+      demo:
+        "https://krishibandhu-frontend.onrender.com/login",
     },
+
     {
       number: "02",
       title: "VISIONSCOP-AI",
@@ -32,7 +35,8 @@ function Projects() {
         "Node.js",
       ],
       status: "IN DEVELOPMENT",
-      github: "https://github.com/Kiran-0226/visionscope-ai",
+      github:
+        "https://github.com/Kiran-0226/visionscope-ai",
       demo: null,
     },
   ];
@@ -41,7 +45,7 @@ function Projects() {
     <main className="projects-page">
 
       {/* =====================================================
-          BACKGROUND SYSTEM
+          BACKGROUND
       ===================================================== */}
 
       <div className="projects-grid-bg"></div>
@@ -49,6 +53,7 @@ function Projects() {
       <div className="projects-scan-line"></div>
 
       <div className="projects-glow projects-glow-one"></div>
+
       <div className="projects-glow projects-glow-two"></div>
 
 
@@ -58,7 +63,6 @@ function Projects() {
 
       <div className="projects-container">
 
-
         {/* ===================================================
             HEADER
         =================================================== */}
@@ -66,19 +70,16 @@ function Projects() {
         <header className="projects-header">
 
           <div className="projects-system">
-
             <span className="projects-dot"></span>
 
-            <span>
-              PROJECTS / WORK
-            </span>
-
+            PROJECTS / WORK
           </div>
-
 
           <p className="projects-command">
 
-            <span>$</span>
+            <span className="projects-command-symbol">
+              $
+            </span>
 
             <span>
               ls projects/
@@ -86,56 +87,42 @@ function Projects() {
 
           </p>
 
-
           <h1>
             Things I've
             <span> built.</span>
           </h1>
 
-
           <p className="projects-intro">
-            A collection of projects I've worked on while exploring
-            software development, artificial intelligence, and
-            cybersecurity.
+            A collection of projects I've worked on while
+            exploring software development, artificial
+            intelligence, and cybersecurity.
           </p>
 
         </header>
 
 
         {/* ===================================================
-            PROJECT LIST
+            PROJECT CARDS
         =================================================== */}
 
         <section className="projects-list">
 
-          {projects.map((project, projectIndex) => (
+          {projects.map((project) => (
 
             <article
               className="project-card"
               key={project.number}
-              style={{
-                "--project-delay": `${1 + projectIndex * 0.3}s`,
-              }}
             >
 
-              {/* Card scan effect */}
-
-              <div className="project-card-scan"></div>
-
-              <div className="project-card-corner project-corner-one"></div>
-              <div className="project-card-corner project-corner-two"></div>
-
-
-              {/* =================================================
-                  PROJECT TOP
-              ================================================= */}
+              {/* -----------------------------------------------
+                  CARD HEADER
+              ----------------------------------------------- */}
 
               <div className="project-top">
 
                 <div className="project-number">
                   {project.number}
                 </div>
-
 
                 <div className="project-heading">
 
@@ -148,7 +135,6 @@ function Projects() {
                   </h2>
 
                 </div>
-
 
                 <div
                   className={`project-status ${
@@ -167,18 +153,15 @@ function Projects() {
               </div>
 
 
-              {/* =================================================
-                  PROJECT CONTENT
-              ================================================= */}
+              {/* -----------------------------------------------
+                  CARD CONTENT
+              ----------------------------------------------- */}
 
               <div className="project-content">
 
-
-                {/* Description */}
-
                 <div className="project-description">
 
-                  <span className="project-content-label">
+                  <span className="project-section-label">
                     DESCRIPTION
                   </span>
 
@@ -188,33 +171,24 @@ function Projects() {
 
                 </div>
 
-
-                {/* Stack */}
-
                 <div className="project-stack-section">
 
                   <span className="stack-label">
                     STACK
                   </span>
 
-
                   <div className="project-stack">
 
-                    {project.stack.map(
-                      (technology, technologyIndex) => (
+                    {project.stack.map((technology) => (
 
-                        <span
-                          className="stack-item"
-                          key={technology}
-                          style={{
-                            "--stack-delay": `${1.5 + projectIndex * 0.3 + technologyIndex * 0.06}s`,
-                          }}
-                        >
-                          {technology}
-                        </span>
+                      <span
+                        className="stack-item"
+                        key={technology}
+                      >
+                        {technology}
+                      </span>
 
-                      )
-                    )}
+                    ))}
 
                   </div>
 
@@ -223,12 +197,11 @@ function Projects() {
               </div>
 
 
-              {/* =================================================
-                  PROJECT FOOTER
-              ================================================= */}
+              {/* -----------------------------------------------
+                  CARD FOOTER
+              ----------------------------------------------- */}
 
               <div className="project-footer">
-
 
                 <div className="project-command">
 
@@ -240,17 +213,9 @@ function Projects() {
                     ./open_project.sh
                   </span>
 
-                  <span className="project-command-cursor">
-                    _
-                  </span>
-
                 </div>
 
-
                 <div className="project-links">
-
-
-                  {/* GitHub */}
 
                   <a
                     href={project.github}
@@ -258,19 +223,9 @@ function Projects() {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-
-                    <span>
-                      GITHUB
-                    </span>
-
-                    <span className="project-link-arrow">
-                      ↗
-                    </span>
-
+                    GITHUB
+                    <span>↗</span>
                   </a>
-
-
-                  {/* Live Demo */}
 
                   {project.demo ? (
 
@@ -280,29 +235,15 @@ function Projects() {
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-
-                      <span>
-                        LIVE DEMO
-                      </span>
-
-                      <span className="project-link-arrow">
-                        ↗
-                      </span>
-
+                      LIVE DEMO
+                      <span>↗</span>
                     </a>
 
                   ) : (
 
                     <span className="project-link project-link-disabled">
-
-                      <span>
-                        LIVE DEMO
-                      </span>
-
-                      <span>
-                        ⌛
-                      </span>
-
+                      LIVE DEMO
+                      <span>⌛</span>
                     </span>
 
                   )}
@@ -324,6 +265,8 @@ function Projects() {
 
         <section className="projects-terminal">
 
+          {/* Terminal Header */}
+
           <div className="projects-terminal-header">
 
             <div className="terminal-dots">
@@ -334,92 +277,121 @@ function Projects() {
 
             </div>
 
-
-            <span>
+            <span className="projects-terminal-title">
               projects@kiran ~ /portfolio
             </span>
 
-
-            <span className="projects-terminal-live">
+            <span className="projects-terminal-status">
               SCAN_COMPLETE
             </span>
 
           </div>
 
 
+          {/* Terminal Body */}
+
           <div className="projects-terminal-body">
 
+            {/* -----------------------------------------------
+                COMMAND
+            ----------------------------------------------- */}
 
-            <div className="terminal-line projects-line-1">
+            <div className="terminal-line terminal-command-one">
 
-              <span>
+              <span className="terminal-prompt">
                 $
               </span>
 
-              find ./projects -type f
+              <span>
+                find ./projects -type f
+              </span>
 
             </div>
 
 
-            <div className="terminal-output projects-output-1">
+            {/* -----------------------------------------------
+                PROJECT 01
+            ----------------------------------------------- */}
 
-              <span>
+            <div className="terminal-project-row">
+
+              <span className="terminal-project-path">
                 ./projects/
               </span>
 
-              <strong>
+              <span className="terminal-project-name">
                 krishibandhu
-              </strong>
+              </span>
 
-              <small>
+              <span className="terminal-project-status terminal-active">
                 ACTIVE
-              </small>
+              </span>
 
             </div>
 
 
-            <div className="terminal-output projects-output-2">
+            {/* -----------------------------------------------
+                PROJECT 02
+            ----------------------------------------------- */}
 
-              <span>
+            <div className="terminal-project-row">
+
+              <span className="terminal-project-path">
                 ./projects/
               </span>
 
-              <strong>
+              <span className="terminal-project-name">
                 visionscope-ai
-              </strong>
+              </span>
 
-              <small>
-                DEVELOPMENT
-              </small>
+              <span className="terminal-project-status terminal-development">
+                IN DEVELOPMENT
+              </span>
 
             </div>
 
 
-            <div className="terminal-line projects-line-2">
+            {/* -----------------------------------------------
+                STATUS COMMAND
+            ----------------------------------------------- */}
 
-              <span>
+            <div className="terminal-line terminal-status-command">
+
+              <span className="terminal-prompt">
                 $
               </span>
 
-              ./projects --status
+              <span>
+                ./projects --status
+              </span>
 
             </div>
 
 
-            <div className="terminal-output projects-output-3">
+            {/* -----------------------------------------------
+                STATUS OUTPUT
+            ----------------------------------------------- */}
 
-              <span className="output-arrow">
+            <div className="terminal-status-output">
+
+              <span className="terminal-output-arrow">
                 →
               </span>
 
-              2 PROJECTS DETECTED / SYSTEM ACTIVE
+              <span>
+                2 PROJECTS DETECTED / SYSTEM ACTIVE
+              </span>
 
             </div>
 
 
+            {/* -----------------------------------------------
+                FINAL COMMAND
+            ----------------------------------------------- */}
+
             <div className="terminal-line terminal-last-line">
 
-              <span>
+              <span className="terminal-prompt">
                 $
               </span>
 
@@ -437,7 +409,7 @@ function Projects() {
 
 
       {/* =====================================================
-          BOTTOM SYSTEM LINE
+          BOTTOM PAGE INDICATOR
       ===================================================== */}
 
       <div className="projects-bottom-line">
