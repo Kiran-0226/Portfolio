@@ -1,0 +1,136 @@
+/* =========================================================
+   GLOBAL RESET
+========================================================= */
+
+* {
+  box-sizing: border-box;
+
+  margin: 0;
+
+  padding: 0;
+}
+
+
+/* =========================================================
+   HTML
+========================================================= */
+
+html {
+  width: 100%;
+
+  min-height: 100%;
+
+  background: #05080a;
+
+  scroll-behavior: smooth;
+}
+
+
+/* =========================================================
+   BODY
+========================================================= */
+
+body {
+  width: 100%;
+
+  min-height: 100%;
+
+  margin: 0;
+
+  background: #05080a;
+
+  color: #e8eeeb;
+
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  overflow-x: hidden;
+
+  -webkit-font-smoothing: antialiased;
+
+  text-rendering: optimizeLegibility;
+}
+
+
+/* =========================================================
+   ROOT
+========================================================= */
+
+#root {
+  width: 100%;
+
+  min-height: 100vh;
+
+  background: #05080a;
+}
+
+
+/* =========================================================
+   LINKS
+========================================================= */
+
+a {
+  color: inherit;
+}
+
+
+/* =========================================================
+   BUTTONS / INPUTS
+========================================================= */
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+
+/* =========================================================
+   IMAGES
+========================================================= */
+
+img {
+  display: block;
+
+  max-width: 100%;
+
+  height: auto;
+}
+
+
+/* =========================================================
+   MOBILE TAP BEHAVIOR
+========================================================= */
+
+button,
+a {
+  -webkit-tap-highlight-color:
+    transparent;
+}
+
+
+/* =========================================================
+   REDUCE MOTION
+   Helps users who prefer less animation.
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+
+    animation-iteration-count: 1 !important;
+
+    scroll-behavior: auto !important;
+
+    transition-duration: 0.01ms !important;
+  }
+
+}

@@ -1,0 +1,722 @@
+/* =========================================================
+   ABOUT PAGE
+========================================================= */
+
+.about-page {
+  width: 100%;
+
+  min-height: calc(100vh - 76px);
+
+  padding: 70px 0 90px;
+
+  background:
+    radial-gradient(
+      circle at 15% 20%,
+      rgba(0, 232, 154, 0.035),
+      transparent 28%
+    );
+
+  overflow-x: hidden;
+}
+
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.about-container {
+  width: min(
+    1100px,
+    calc(100% - 48px)
+  );
+
+  margin: 0 auto;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.about-header {
+  max-width: 780px;
+
+  margin-bottom: 60px;
+}
+
+
+.about-system {
+  width: fit-content;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  margin-bottom: 22px;
+
+  padding: 7px 12px;
+
+  border: 1px solid
+    rgba(0, 232, 154, 0.13);
+
+  border-radius: 4px;
+
+  color: #53605b;
+
+  background:
+    rgba(0, 232, 154, 0.015);
+
+  font-family:
+    "JetBrains Mono",
+    monospace;
+
+  font-size: 9px;
+
+  letter-spacing: 0.15em;
+}
+
+
+.about-dot {
+  width: 5px;
+
+  height: 5px;
+
+  border-radius: 50%;
+
+  background: #00e89a;
+
+  box-shadow:
+    0 0 8px
+    rgba(0, 232, 154, 0.7);
+}
+
+
+.about-command {
+  margin-bottom: 15px;
+
+  color: #4e5a55;
+
+  font-family:
+    "JetBrains Mono",
+    monospace;
+
+  font-size: 10px;
+}
+
+
+.about-command span {
+  color: #00e89a;
+}
+
+
+.about-header h1 {
+  margin: 0;
+
+  color: #e8efec;
+
+  font-size:
+    clamp(40px, 5vw, 62px);
+
+  font-weight: 650;
+
+  line-height: 1;
+
+  letter-spacing: -0.045em;
+}
+
+
+.about-header h1 span {
+  color: #00e89a;
+}
+
+
+.about-intro {
+  max-width: 700px;
+
+  margin-top: 25px;
+
+  color: #75817c;
+
+  font-size: 14px;
+
+  line-height: 1.9;
+}
+
+
+/* =========================================================
+   MAIN GRID
+========================================================= */
+
+.about-grid {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(350px, 0.8fr);
+
+  gap: 80px;
+
+  align-items: start;
+}
+
+
+/* =========================================================
+   SECTION LABEL
+========================================================= */
+
+.section-label {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  margin-bottom: 20px;
+
+  color: #5c6964;
+
+  font-family:
+    "JetBrains Mono",
+    monospace;
+
+  font-size: 9px;
+
+  letter-spacing: 0.14em;
+}
+
+
+.section-label span {
+  color: #00e89a;
+}
+
+
+/* =========================================================
+   STORY
+========================================================= */
+
+.about-story h2 {
+  margin-bottom: 28px;
+
+  color: #dce5e1;
+
+  font-size:
+    clamp(28px, 3vw, 40px);
+
+  font-weight: 500;
+
+  line-height: 1.15;
+
+  letter-spacing: -0.035em;
+}
+
+
+.about-story h2 span {
+  color: #596560;
+}
+
+
+.about-story > p {
+  max-width: 650px;
+
+  margin-bottom: 17px;
+
+  color: #707d78;
+
+  font-size: 13px;
+
+  line-height: 1.85;
+}
+
+
+/* =========================================================
+   INTERESTS
+========================================================= */
+
+.interest-list {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 10px;
+
+  margin-top: 32px;
+}
+
+
+.interest-card {
+  min-height: 100px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: space-between;
+
+  gap: 20px;
+
+  padding: 15px;
+
+  border: 1px solid
+    rgba(255, 255, 255, 0.06);
+
+  border-radius: 6px;
+
+  background:
+    rgba(255, 255, 255, 0.015);
+
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    background 0.2s ease;
+}
+
+
+.interest-card:hover {
+  transform: translateY(-3px);
+
+  border-color:
+    rgba(0, 232, 154, 0.18);
+
+  background:
+    rgba(0, 232, 154, 0.025);
+}
+
+
+.interest-icon {
+  color: #00c982;
+
+  font-family:
+    "JetBrains Mono",
+    monospace;
+
+  font-size: 12px;
+}
+
+
+.interest-card strong {
+  display: block;
+
+  margin-bottom: 5px;
+
+  color: #9ba6a2;
+
+  font-size: 10px;
+
+  font-weight: 500;
+}
+
+
+.interest-card small {
+  color: #4e5a55;
+
+  font-size: 8px;
+
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   TERMINAL
+========================================================= */
+
+.about-terminal {
+  overflow: hidden;
+
+  border: 1px solid
+    rgba(255, 255, 255, 0.07);
+
+  border-radius: 8px;
+
+  background:
+    rgba(8, 12, 14, 0.9);
+
+  box-shadow:
+    0 25px 60px
+    rgba(0, 0, 0, 0.25);
+}
+
+
+.about-terminal-header {
+  height: 43px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  padding: 0 16px;
+
+  border-bottom: 1px solid
+    rgba(255, 255, 255, 0.05);
+
+  color: #414b47;
+
+  font-family:
+    "JetBrains Mono",
+    monospace;
+
+  font-size: 9px;
+}
+
+
+.terminal-dots {
+  display: flex;
+
+  gap: 6px;
+}
+
+
+.terminal-dots span {
+  width: 7px;
+
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: #303936;
+}
+
+
+/* =========================================================
+   TERMINAL BODY
+========================================================= */
+
+.about-terminal-body {
+  padding: 25px;
+}
+
+
+.terminal-line {
+  display: flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  margin-bottom: 9px;
+
+  color: #6c7873;
+
+  font-family:
+    "JetBrains Mono",
+    monospace;
+
+  font-size: 10px;
+}
+
+
+.terminal-line span {
+  color: #00e89a;
+}
+
+
+.terminal-output {
+  margin-bottom: 25px;
+
+  padding-left: 18px;
+
+  color: #76827d;
+
+  font-family:
+    "JetBrains Mono",
+    monospace;
+
+  font-size: 10px;
+
+  line-height: 1.7;
+}
+
+
+.terminal-output strong {
+  display: block;
+
+  color: #9aa5a1;
+
+  font-weight: 500;
+}
+
+
+.terminal-output small {
+  display: block;
+
+  margin-top: 3px;
+
+  color: #4e5a55;
+
+  font-size: 8px;
+}
+
+
+/* =========================================================
+   TAGS
+========================================================= */
+
+.terminal-tags {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 7px;
+
+  margin-bottom: 25px;
+
+  padding-left: 18px;
+}
+
+
+.terminal-tags span {
+  padding: 6px 7px;
+
+  border: 1px solid
+    rgba(0, 232, 154, 0.1);
+
+  border-radius: 3px;
+
+  color: #5e7069;
+
+  background:
+    rgba(0, 232, 154, 0.018);
+
+  font-family:
+    "JetBrains Mono",
+    monospace;
+
+  font-size: 7px;
+}
+
+
+/* =========================================================
+   STATUS
+========================================================= */
+
+.terminal-status-line {
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  margin-bottom: 25px;
+
+  padding-left: 18px;
+
+  color: #00bd7c;
+
+  font-family:
+    "JetBrains Mono",
+    monospace;
+
+  font-size: 9px;
+}
+
+
+.status-indicator {
+  width: 5px;
+
+  height: 5px;
+
+  border-radius: 50%;
+
+  background: #00e89a;
+
+  box-shadow:
+    0 0 8px
+    rgba(0, 232, 154, 0.7);
+}
+
+
+.terminal-final {
+  display: flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  color: #00e89a;
+
+  font-family:
+    "JetBrains Mono",
+    monospace;
+
+  font-size: 10px;
+}
+
+
+.terminal-cursor {
+  animation:
+    terminalBlink 1s infinite;
+}
+
+
+@keyframes terminalBlink {
+
+  0%,
+  45% {
+    opacity: 1;
+  }
+
+  46%,
+  100% {
+    opacity: 0;
+  }
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 950px) {
+
+  .about-grid {
+    grid-template-columns:
+      minmax(0, 1fr)
+      minmax(300px, 0.8fr);
+
+    gap: 40px;
+  }
+
+
+  .interest-list {
+    grid-template-columns:
+      1fr 1fr;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 750px) {
+
+  .about-page {
+    min-height: calc(100vh - 68px);
+
+    padding: 45px 0 60px;
+  }
+
+
+  .about-container {
+    width: calc(100% - 32px);
+  }
+
+
+  .about-header {
+    margin-bottom: 40px;
+  }
+
+
+  .about-system {
+    font-size: 8px;
+  }
+
+
+  .about-header h1 {
+    font-size:
+      clamp(36px, 10vw, 50px);
+
+    line-height: 1.05;
+  }
+
+
+  .about-intro {
+    margin-top: 18px;
+
+    font-size: 12px;
+
+    line-height: 1.75;
+  }
+
+
+  .about-grid {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 40px;
+  }
+
+
+  .about-story h2 {
+    font-size: 28px;
+  }
+
+
+  .about-story > p {
+    font-size: 12px;
+  }
+
+
+  .interest-list {
+    grid-template-columns: 1fr;
+
+    gap: 8px;
+
+    margin-top: 25px;
+  }
+
+
+  .interest-card {
+    min-height: 85px;
+
+    flex-direction: row;
+
+    align-items: center;
+  }
+
+
+  .about-terminal {
+    width: 100%;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL PHONES
+========================================================= */
+
+@media (max-width: 420px) {
+
+  .about-container {
+    width: calc(100% - 24px);
+  }
+
+
+  .about-page {
+    padding-top: 35px;
+  }
+
+
+  .about-header h1 {
+    font-size: 34px;
+  }
+
+
+  .about-intro {
+    font-size: 11px;
+  }
+
+
+  .about-story h2 {
+    font-size: 25px;
+  }
+
+
+  .about-story > p {
+    font-size: 11px;
+  }
+
+
+  .about-terminal-body {
+    padding: 19px;
+  }
+
+}

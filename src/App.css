@@ -1,0 +1,21 @@
+main {
+  min-height: 100vh;
+
+  padding-top: 76px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+}
+
+main h1 {
+  color: #00e89a;
+
+  font-family: "JetBrains Mono", monospace;
+
+  font-size: 18px;
+
+  font-weight: 400;
+}
