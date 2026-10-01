@@ -7,6 +7,7 @@ import Skills from "./components/Skills";
 import Projects from "./components/Projects";
 import Certificates from "./components/Certificates";
 import Contact from "./components/Contact";
+import Resume from "./components/Resume";
 
 function Home() {
   return <Hero />;
@@ -19,11 +20,18 @@ function App() {
 
       <Routes>
         <Route path="/" element={<Home />} />
+
         <Route path="/about" element={<About />} />
+
         <Route path="/skills" element={<Skills />} />
+
         <Route path="/projects" element={<Projects />} />
+
         <Route path="/certificates" element={<Certificates />} />
+
         <Route path="/contact" element={<Contact />} />
+
+        <Route path="/resume" element={<Resume />} />
       </Routes>
     </BrowserRouter>
   );

@@ -4,46 +4,33 @@
 
 .navbar {
   position: relative;
-
   z-index: 1000;
 
   width: 100%;
-
   height: 76px;
 
-  border-bottom: 1px solid
-    rgba(255, 255, 255, 0.055);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.055);
 
-  background:
-    rgba(5, 8, 10, 0.92);
+  background: rgba(5, 8, 10, 0.92);
 
   backdrop-filter: blur(14px);
-
   -webkit-backdrop-filter: blur(14px);
 }
-
 
 /* =========================================================
    CONTAINER
 ========================================================= */
 
 .navbar-container {
-  width: min(
-    1200px,
-    calc(100% - 48px)
-  );
-
+  width: min(1200px, calc(100% - 48px));
   height: 100%;
 
   margin: 0 auto;
 
   display: flex;
-
   align-items: center;
-
   justify-content: space-between;
 }
-
 
 /* =========================================================
    LOGO
@@ -51,19 +38,15 @@
 
 .navbar-logo {
   display: inline-flex;
-
   align-items: center;
 
   gap: 2px;
 
   color: #e9efec;
 
-  font-family:
-    "JetBrains Mono",
-    monospace;
+  font-family: "JetBrains Mono", monospace;
 
   font-size: 14px;
-
   font-weight: 700;
 
   letter-spacing: 0.08em;
@@ -71,15 +54,14 @@
   text-decoration: none;
 
   white-space: nowrap;
-}
 
+  flex-shrink: 0;
+}
 
 .navbar-logo span {
   color: #00e89a;
-
   font-weight: 700;
 }
-
 
 /* =========================================================
    DESKTOP NAVIGATION
@@ -87,16 +69,13 @@
 
 .navbar-links {
   display: flex;
-
   align-items: center;
 
-  gap: 30px;
+  gap: 24px;
 
   margin-left: auto;
-
-  margin-right: 80px;
+  margin-right: 55px;
 }
-
 
 .nav-link {
   position: relative;
@@ -105,24 +84,22 @@
 
   color: #68736f;
 
-  font-size: 11px;
+  font-size: 10px;
 
   text-decoration: none;
 
-  transition:
-    color 0.2s ease;
-}
+  white-space: nowrap;
 
+  transition: color 0.2s ease;
+}
 
 .nav-link:hover {
   color: #d6dfdb;
 }
 
-
 .nav-link.active {
   color: #d6dfdb;
 }
-
 
 .nav-link.active::after {
   content: "";
@@ -130,24 +107,43 @@
   position: absolute;
 
   left: 50%;
-
   bottom: 18px;
 
   width: 4px;
-
   height: 4px;
 
   border-radius: 50%;
 
   background: #00e89a;
 
-  box-shadow:
-    0 0 8px
-    rgba(0, 232, 154, 0.7);
+  box-shadow: 0 0 8px rgba(0, 232, 154, 0.7);
 
   transform: translateX(-50%);
 }
 
+/* =========================================================
+   RESUME
+   Resume is NOT permanently green.
+   It becomes green only when active.
+========================================================= */
+
+.nav-link.nav-resume {
+  color: #68736f;
+}
+
+.nav-link.nav-resume:hover {
+  color: #d6dfdb;
+}
+
+.nav-link.nav-resume.active {
+  color: #00ffab;
+}
+
+.nav-link.nav-resume.active::after {
+  background: #00e89a;
+
+  box-shadow: 0 0 8px rgba(0, 232, 154, 0.7);
+}
 
 /* =========================================================
    AVAILABILITY
@@ -155,35 +151,31 @@
 
 .navbar-status {
   display: flex;
-
   align-items: center;
 
   gap: 8px;
 
   padding: 7px 12px;
 
-  border: 1px solid
-    rgba(0, 232, 154, 0.12);
+  border: 1px solid rgba(0, 232, 154, 0.12);
 
   border-radius: 20px;
 
   color: #5b6863;
 
-  font-family:
-    "JetBrains Mono",
-    monospace;
+  font-family: "JetBrains Mono", monospace;
 
   font-size: 8px;
 
   letter-spacing: 0.08em;
 
   white-space: nowrap;
-}
 
+  flex-shrink: 0;
+}
 
 .status-dot {
   width: 5px;
-
   height: 5px;
 
   flex-shrink: 0;
@@ -192,17 +184,12 @@
 
   background: #00e89a;
 
-  box-shadow:
-    0 0 8px
-    rgba(0, 232, 154, 0.7);
+  box-shadow: 0 0 8px rgba(0, 232, 154, 0.7);
 
-  animation:
-    navPulse 2s infinite;
+  animation: navPulse 2s infinite;
 }
 
-
 @keyframes navPulse {
-
   0%,
   100% {
     opacity: 1;
@@ -211,9 +198,7 @@
   50% {
     opacity: 0.4;
   }
-
 }
-
 
 /* =========================================================
    MOBILE MENU BUTTON
@@ -223,34 +208,27 @@
   display: none;
 
   width: 42px;
-
   height: 42px;
 
   padding: 0;
 
-  border: 1px solid
-    rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.08);
 
   border-radius: 5px;
 
-  background:
-    rgba(255, 255, 255, 0.02);
+  background: rgba(255, 255, 255, 0.02);
 
   cursor: pointer;
 
   flex-direction: column;
-
   align-items: center;
-
   justify-content: center;
 
   gap: 5px;
 }
 
-
 .mobile-menu-button span {
   width: 18px;
-
   height: 1px;
 
   background: #8c9793;
@@ -260,25 +238,17 @@
     opacity 0.25s ease;
 }
 
-
 .mobile-menu-button.open span:nth-child(1) {
-  transform:
-    translateY(6px)
-    rotate(45deg);
+  transform: translateY(6px) rotate(45deg);
 }
-
 
 .mobile-menu-button.open span:nth-child(2) {
   opacity: 0;
 }
 
-
 .mobile-menu-button.open span:nth-child(3) {
-  transform:
-    translateY(-6px)
-    rotate(-45deg);
+  transform: translateY(-6px) rotate(-45deg);
 }
-
 
 /* =========================================================
    MOBILE MENU
@@ -288,62 +258,77 @@
   display: none;
 }
 
-
 /* =========================================================
    TABLET
 ========================================================= */
 
-@media (max-width: 1000px) {
+@media (max-width: 1100px) {
+  .navbar-container {
+    width: min(100%, calc(100% - 36px));
+  }
 
   .navbar-links {
-    gap: 20px;
+    gap: 18px;
+    margin-right: 30px;
+  }
 
-    margin-right: 35px;
+  .nav-link {
+    font-size: 9px;
+  }
+
+  .navbar-status {
+    padding: 6px 10px;
+  }
+}
+
+/* =========================================================
+   TABLET / SMALL DESKTOP
+========================================================= */
+
+@media (max-width: 950px) {
+  .navbar-links {
+    gap: 14px;
+    margin-right: 22px;
+  }
+
+  .nav-link {
+    font-size: 8.5px;
   }
 
   .navbar-status {
     display: none;
   }
-
 }
-
 
 /* =========================================================
    MOBILE
 ========================================================= */
 
 @media (max-width: 750px) {
-
   .navbar {
     height: 68px;
   }
-
 
   .navbar-container {
     width: calc(100% - 32px);
   }
 
-
   .navbar-links {
     display: none;
   }
-
 
   .navbar-status {
     display: none;
   }
 
-
   .mobile-menu-button {
     display: flex;
   }
-
 
   .mobile-menu {
     position: absolute;
 
     top: 68px;
-
     left: 0;
 
     width: 100%;
@@ -352,18 +337,14 @@
 
     padding: 0 16px 20px;
 
-    border-bottom: 1px solid
-      rgba(255, 255, 255, 0.06);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 
-    background:
-      rgba(5, 8, 10, 0.98);
+    background: rgba(5, 8, 10, 0.98);
 
     backdrop-filter: blur(18px);
-
     -webkit-backdrop-filter: blur(18px);
 
-    transform:
-      translateY(-15px);
+    transform: translateY(-15px);
 
     opacity: 0;
 
@@ -377,10 +358,8 @@
       visibility 0.25s ease;
   }
 
-
   .mobile-menu.show {
-    transform:
-      translateY(0);
+    transform: translateY(0);
 
     opacity: 1;
 
@@ -388,7 +367,6 @@
 
     pointer-events: auto;
   }
-
 
   .mobile-nav-links {
     display: flex;
@@ -399,7 +377,6 @@
 
     padding-top: 12px;
   }
-
 
   .mobile-nav-link {
     display: flex;
@@ -418,9 +395,7 @@
 
     color: #68736f;
 
-    font-family:
-      "JetBrains Mono",
-      monospace;
+    font-family: "JetBrains Mono", monospace;
 
     font-size: 11px;
 
@@ -432,7 +407,6 @@
       border-color 0.2s ease;
   }
 
-
   .mobile-nav-link span {
     width: 22px;
 
@@ -441,30 +415,23 @@
     font-size: 9px;
   }
 
-
   .mobile-nav-link:hover {
     color: #dce5e1;
 
-    background:
-      rgba(255, 255, 255, 0.025);
+    background: rgba(255, 255, 255, 0.025);
   }
-
 
   .mobile-nav-link.active {
     color: #00e89a;
 
-    border-color:
-      rgba(0, 232, 154, 0.1);
+    border-color: rgba(0, 232, 154, 0.1);
 
-    background:
-      rgba(0, 232, 154, 0.025);
+    background: rgba(0, 232, 154, 0.025);
   }
-
 
   .mobile-nav-link.active span {
     color: #00a96f;
   }
-
 
   .mobile-status {
     display: flex;
@@ -477,43 +444,39 @@
 
     padding: 11px 12px;
 
-    border-top: 1px solid
-      rgba(255, 255, 255, 0.05);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
 
     color: #4c5954;
 
-    font-family:
-      "JetBrains Mono",
-      monospace;
+    font-family: "JetBrains Mono", monospace;
 
     font-size: 8px;
 
     letter-spacing: 0.08em;
   }
-
 }
-
 
 /* =========================================================
    VERY SMALL PHONES
 ========================================================= */
 
 @media (max-width: 380px) {
-
   .navbar-container {
     width: calc(100% - 24px);
   }
-
 
   .navbar-logo {
     font-size: 12px;
   }
 
-
   .mobile-menu-button {
     width: 38px;
-
     height: 38px;
   }
 
+  .mobile-nav-link {
+    min-height: 45px;
+
+    font-size: 10px;
+  }
 }

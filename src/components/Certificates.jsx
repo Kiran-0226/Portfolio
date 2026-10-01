@@ -90,24 +90,59 @@ function Certificates() {
 
   return (
     <main className="certificates-page">
+
+      {/* =====================================================
+          BACKGROUND SYSTEM
+      ===================================================== */}
+
+      <div className="certificates-grid-bg"></div>
+
+      <div className="certificates-scan-line"></div>
+
+      <div className="certificates-glow certificates-glow-one"></div>
+      <div className="certificates-glow certificates-glow-two"></div>
+
+
+      {/* =====================================================
+          MAIN CONTAINER
+      ===================================================== */}
+
       <div className="certificates-container">
 
-        {/* HEADER */}
+
+        {/* ===================================================
+            HEADER
+        =================================================== */}
+
         <header className="certificates-header">
 
           <div className="certificates-system">
+
             <span className="certificates-dot"></span>
-            CERTIFICATES / ACHIEVEMENTS
+
+            <span>
+              CERTIFICATES / ACHIEVEMENTS
+            </span>
+
           </div>
 
+
           <p className="certificates-command">
-            <span>$</span> ls certificates/
+
+            <span>$</span>
+
+            <span>
+              ls certificates/
+            </span>
+
           </p>
+
 
           <h1>
             Things I've
             <span> learned.</span>
           </h1>
+
 
           <p className="certificates-intro">
             Certifications and courses completed while building
@@ -117,16 +152,37 @@ function Certificates() {
 
         </header>
 
-        {/* CERTIFICATE GRID */}
+
+        {/* ===================================================
+            CERTIFICATE GRID
+        =================================================== */}
+
         <section className="certificates-grid">
 
-          {certificates.map((certificate) => (
+          {certificates.map((certificate, index) => (
+
             <article
               className="certificate-card"
               key={certificate.number}
+              style={{
+                "--certificate-delay": `${1 + index * 0.13}s`,
+              }}
             >
 
-              {/* CERTIFICATE IMAGE */}
+              {/* =================================================
+                  CARD SCAN
+              ================================================= */}
+
+              <div className="certificate-card-scan"></div>
+
+              <div className="certificate-corner certificate-corner-one"></div>
+              <div className="certificate-corner certificate-corner-two"></div>
+
+
+              {/* =================================================
+                  CERTIFICATE IMAGE
+              ================================================= */}
+
               <div className="certificate-image-wrapper">
 
                 <img
@@ -135,28 +191,53 @@ function Certificates() {
                   className="certificate-image"
                 />
 
+
+                {/* Image scan */}
+
+                <div className="certificate-image-scan"></div>
+
+
+                {/* Image overlay */}
+
                 <div className="certificate-overlay">
 
-                  <a
-                    href={certificate.image}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="certificate-view-image"
-                  >
-                    VIEW CERTIFICATE
-                    <span>↗</span>
-                  </a>
+                  <div className="certificate-overlay-content">
+
+                    <span className="certificate-scan-icon">
+                      ◉
+                    </span>
+
+                    <span>
+                      CREDENTIAL_DETECTED
+                    </span>
+
+                    <a
+                      href={certificate.image}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="certificate-view-image"
+                    >
+                      VIEW CERTIFICATE
+                      <span>↗</span>
+                    </a>
+
+                  </div>
 
                 </div>
 
               </div>
 
-              {/* CARD CONTENT */}
+
+              {/* =================================================
+                  CARD CONTENT
+              ================================================= */}
+
               <div className="certificate-content">
 
                 <div className="certificate-number">
                   {certificate.number}
                 </div>
+
 
                 <div className="certificate-info">
 
@@ -164,24 +245,46 @@ function Certificates() {
                     {certificate.platform}
                   </span>
 
+
                   <h2>
                     {certificate.title}
                   </h2>
+
 
                   <p className="certificate-issuer">
                     {certificate.issuer}
                   </p>
 
+
                   <p className="certificate-date">
-                    <span>$</span> issued: {certificate.date}
+
+                    <span>
+                      $
+                    </span>
+
+                    issued: {certificate.date}
+
                   </p>
 
                 </div>
 
               </div>
 
-              {/* VERIFICATION FOOTER */}
+
+              {/* =================================================
+                  VERIFICATION FOOTER
+              ================================================= */}
+
               <div className="certificate-footer">
+
+                <div className="certificate-verification-status">
+
+                  <span className="verification-dot"></span>
+
+                  VERIFIED CREDENTIAL
+
+                </div>
+
 
                 <a
                   href={certificate.verification}
@@ -189,60 +292,144 @@ function Certificates() {
                   rel="noopener noreferrer"
                   className="certificate-verify"
                 >
-                  VERIFY
-                  <span>↗</span>
+
+                  <span>
+                    VERIFY
+                  </span>
+
+                  <span>
+                    ↗
+                  </span>
+
                 </a>
 
               </div>
 
             </article>
+
           ))}
 
         </section>
 
-        {/* TERMINAL */}
+
+        {/* ===================================================
+            TERMINAL
+        =================================================== */}
+
         <section className="certificates-terminal">
 
           <div className="certificates-terminal-header">
 
             <div className="terminal-dots">
+
               <span></span>
               <span></span>
               <span></span>
+
             </div>
+
 
             <span>
               certificates@kiran ~ /portfolio
             </span>
 
+
+            <span className="certificates-terminal-live">
+              VERIFICATION_COMPLETE
+            </span>
+
           </div>
+
 
           <div className="certificates-terminal-body">
 
-            <div className="terminal-line">
-              <span>$</span>
+
+            {/* Scan command */}
+
+            <div className="terminal-line certificates-line-1">
+
+              <span>
+                $
+              </span>
+
               find ./certificates -type f
+
             </div>
 
-            <div className="terminal-output">
-              <span>./certificates/</span>
+
+            {/* Scan result */}
+
+            <div className="terminal-output certificates-output-1">
+
+              <span>
+                ./certificates/
+              </span>
+
               <strong>
                 {certificates.length} certificates found
               </strong>
+
             </div>
 
-            <div className="terminal-output">
-              <span>./status/</span>
-              <strong>
-                LEARNING CONTINUOUSLY
-              </strong>
+
+            {/* Verification command */}
+
+            <div className="terminal-line certificates-line-2">
+
+              <span>
+                $
+              </span>
+
+              ./verify_credentials.sh
+
             </div>
 
-            <div className="terminal-line terminal-last-line">
-              <span>$</span>
+
+            <div className="terminal-output certificates-output-2">
+
+              <span className="output-arrow">
+                →
+              </span>
+
+              Credential records loaded
+
+            </div>
+
+
+            <div className="terminal-output certificates-output-3">
+
+              <span className="output-arrow">
+                →
+              </span>
+
+              Verification links available
+
+            </div>
+
+
+            <div className="terminal-output certificates-output-4">
+
+              <span className="output-arrow">
+                →
+              </span>
+
+              LEARNING CONTINUOUSLY
+
+            </div>
+
+
+            {/* Final command */}
+
+            <div className="terminal-line certificates-final-line">
+
+              <span>
+                $
+              </span>
+
               <span className="terminal-cursor">
                 _
               </span>
+
             </div>
 
           </div>
@@ -250,6 +437,24 @@ function Certificates() {
         </section>
 
       </div>
+
+
+      {/* =====================================================
+          BOTTOM SYSTEM LINE
+      ===================================================== */}
+
+      <div className="certificates-bottom-line">
+
+        <span></span>
+
+        <span>
+          05 / CERTIFICATES
+        </span>
+
+        <span></span>
+
+      </div>
+
     </main>
   );
 }

@@ -58,120 +58,335 @@ function Skills() {
 
     return (
         <main className="skills-page">
+
+            {/* =====================================================
+                BACKGROUND
+            ===================================================== */}
+
+            <div className="skills-grid-bg"></div>
+
+            <div className="skills-scan-line"></div>
+
+            <div className="skills-glow skills-glow-one"></div>
+
+            <div className="skills-glow skills-glow-two"></div>
+
+
             <div className="skills-container">
 
-                {/* HEADER */}
+                {/* =================================================
+                    HEADER
+                ================================================= */}
+
                 <header className="skills-header">
+
                     <div className="skills-system">
+
                         <span className="skills-dot"></span>
-                        SKILLS / TECHNOLOGIES
+
+                        <span>
+                            SKILLS / TECHNOLOGIES
+                        </span>
+
                     </div>
 
+
                     <p className="skills-command">
-                        <span>$</span> cat skills.json
+
+                        <span className="command-symbol">
+                            $
+                        </span>
+
+                        <span className="command-text">
+                            cat skills.json
+                        </span>
+
+                        <span className="command-cursor">
+                            _
+                        </span>
+
                     </p>
 
-                    <h1>
-                        Tools I use.
-                        <span> Technologies I build with.</span>
+
+                    <h1 className="skills-title">
+
+                        <span className="title-normal">
+                            Tools I use.
+                        </span>
+
+                        <span className="title-green">
+                            Technologies I build with.
+                        </span>
+
                     </h1>
+
 
                     <p className="skills-intro">
                         Technologies, programming languages, development tools,
                         and cybersecurity concepts that are part of my current
                         learning and development journey.
                     </p>
+
                 </header>
 
-                {/* SKILL GROUPS */}
+
+                {/* =================================================
+                    SKILL MODULES
+                ================================================= */}
+
                 <section className="skills-grid">
-                    {skillGroups.map((group) => (
-                        <article className="skill-panel" key={group.number}>
+
+                    {skillGroups.map((group, groupIndex) => (
+
+                        <article
+                            className={`skill-panel skill-panel-${groupIndex + 1}`}
+                            key={group.number}
+                        >
+
+                            {/* BOOT SCAN */}
+
+                            <div className="skill-boot-scan"></div>
+
+
+                            {/* PANEL HEADER */}
 
                             <div className="skill-panel-top">
-                                <span className="skill-number">
-                                    {group.number}
-                                </span>
 
-                                <div>
-                                    <h2>{group.title}</h2>
+                                <div className="skill-number">
+                                    {group.number}
+                                </div>
+
+
+                                <div className="skill-panel-heading">
+
+                                    <h2>
+                                        {group.title}
+                                    </h2>
 
                                     <p className="skill-terminal-command">
-                                        <span>$</span> {group.command}
+
+                                        <span>
+                                            $
+                                        </span>
+
+                                        {group.command}
+
                                     </p>
+
                                 </div>
+
+
+                                <div className="skill-loaded">
+
+                                    <span></span>
+
+                                    LOADED
+
+                                </div>
+
                             </div>
+
+
+                            {/* SKILLS */}
 
                             <div className="skill-list">
-                                {group.skills.map((skill) => (
-                                    <div className="skill-item" key={skill}>
-                                        <span className="skill-arrow">&gt;</span>
-                                        <span className="skill-name">{skill}</span>
-                                    </div>
-                                ))}
+
+                                {group.skills.map(
+                                    (skill, skillIndex) => (
+
+                                        <div
+                                            className="skill-item"
+                                            key={skill}
+                                            style={{
+                                                "--skill-index":
+                                                    skillIndex,
+                                            }}
+                                        >
+
+                                            <span className="skill-arrow">
+                                                &gt;
+                                            </span>
+
+                                            <span className="skill-name">
+                                                {skill}
+                                            </span>
+
+                                        </div>
+
+                                    )
+                                )}
+
                             </div>
 
+
+                            {/* HOVER SCAN */}
+
+                            <div className="skill-hover-scan"></div>
+
                         </article>
+
                     ))}
+
                 </section>
 
-                {/* TERMINAL */}
+
+                {/* =================================================
+                    TERMINAL
+                ================================================= */}
+
                 <section className="skills-terminal">
+
                     <div className="skills-terminal-header">
 
                         <div className="terminal-dots">
+
                             <span></span>
                             <span></span>
                             <span></span>
+
                         </div>
 
-                        <span>skills@kiran ~ /portfolio</span>
+
+                        <span className="terminal-title">
+                            skills@kiran ~ /portfolio
+                        </span>
+
+
+                        <span className="skills-terminal-status">
+                            ONLINE
+                        </span>
+
                     </div>
+
 
                     <div className="skills-terminal-body">
 
-                        <div className="terminal-line">
-                            <span>$</span> ./current_focus.sh
+                        <div className="terminal-line terminal-command-one">
+
+                            <span>
+                                $
+                            </span>
+
+                            <span>
+                                ./current_focus.sh
+                            </span>
+
                         </div>
 
-                        <div className="terminal-terminal-output">
-                            <span className="output-arrow">→</span>
-                            Cybersecurity &amp; Full-Stack Development
+
+                        <div className="terminal-output terminal-output-one">
+
+                            <span className="output-arrow">
+                                →
+                            </span>
+
+                            <span>
+                                Cybersecurity &amp; Full-Stack Development
+                            </span>
+
                         </div>
 
-                        <div className="terminal-line">
-                            <span>$</span> ./learning.sh
+
+                        <div className="terminal-line terminal-command-two">
+
+                            <span>
+                                $
+                            </span>
+
+                            <span>
+                                ./learning.sh
+                            </span>
+
                         </div>
 
-                        <div className="terminal-terminal-output">
-                            <span className="output-arrow">→</span>
-                            Ethical Hacking
+
+                        <div className="terminal-output terminal-output-two">
+
+                            <span className="output-arrow">
+                                →
+                            </span>
+
+                            <span>
+                                Ethical Hacking
+                            </span>
+
                         </div>
 
-                        <div className="terminal-terminal-output">
-                            <span className="output-arrow">→</span>
-                            Web Application Security
+
+                        <div className="terminal-output terminal-output-three">
+
+                            <span className="output-arrow">
+                                →
+                            </span>
+
+                            <span>
+                                Web Application Security
+                            </span>
+
                         </div>
 
-                        <div className="terminal-terminal-output">
-                            <span className="output-arrow">→</span>
-                            Linux &amp; Networking
+
+                        <div className="terminal-output terminal-output-four">
+
+                            <span className="output-arrow">
+                                →
+                            </span>
+
+                            <span>
+                                Linux &amp; Networking
+                            </span>
+
                         </div>
 
-                        <div className="terminal-terminal-output">
-                            <span className="output-arrow">→</span>
-                            Offensive Security
+
+                        <div className="terminal-output terminal-output-five">
+
+                            <span className="output-arrow">
+                                →
+                            </span>
+
+                            <span>
+                                Offensive Security
+                            </span>
+
                         </div>
+
 
                         <div className="terminal-final-line">
-                            <span>$</span>
-                            <span className="terminal-cursor">_</span>
+
+                            <span>
+                                $
+                            </span>
+
+                            <span className="terminal-cursor">
+                                _
+                            </span>
+
                         </div>
 
                     </div>
+
                 </section>
 
             </div>
+
+
+            {/* =====================================================
+                BOTTOM INDICATOR
+            ===================================================== */}
+
+            <div className="skills-bottom-line">
+
+                <span></span>
+
+                <span>
+                    03 / SKILLS
+                </span>
+
+                <span></span>
+
+            </div>
+
         </main>
     );
 }

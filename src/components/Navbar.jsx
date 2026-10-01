@@ -12,7 +12,6 @@ function Navbar() {
 
   return (
     <header className="navbar">
-
       <div className="navbar-container">
 
         {/* Logo */}
@@ -25,7 +24,6 @@ function Navbar() {
           KIRAN
           <span>/&gt;</span>
         </NavLink>
-
 
         {/* Desktop Navigation */}
         <nav className="navbar-links">
@@ -76,6 +74,17 @@ function Navbar() {
           </NavLink>
 
           <NavLink
+            to="/resume"
+            className={({ isActive }) =>
+              isActive
+                ? "nav-link nav-resume active"
+                : "nav-link nav-resume"
+            }
+          >
+            Resume
+          </NavLink>
+
+          <NavLink
             to="/contact"
             className={({ isActive }) =>
               isActive ? "nav-link active" : "nav-link"
@@ -86,16 +95,11 @@ function Navbar() {
 
         </nav>
 
-
         {/* Availability */}
         <div className="navbar-status">
-
           <span className="status-dot"></span>
-
           <span>Available</span>
-
         </div>
-
 
         {/* Mobile Menu Button */}
         <button
@@ -109,16 +113,14 @@ function Navbar() {
               : "Open navigation menu"
           }
           aria-expanded={menuOpen}
+          type="button"
         >
-
           <span></span>
           <span></span>
           <span></span>
-
         </button>
 
       </div>
-
 
       {/* Mobile Navigation */}
       <div
@@ -126,7 +128,6 @@ function Navbar() {
           menuOpen ? "show" : ""
         }`}
       >
-
         <nav className="mobile-nav-links">
 
           <NavLink
@@ -195,7 +196,7 @@ function Navbar() {
           </NavLink>
 
           <NavLink
-            to="/contact"
+            to="/resume"
             onClick={closeMenu}
             className={({ isActive }) =>
               isActive
@@ -204,22 +205,30 @@ function Navbar() {
             }
           >
             <span>06</span>
+            Resume
+          </NavLink>
+
+          <NavLink
+            to="/contact"
+            onClick={closeMenu}
+            className={({ isActive }) =>
+              isActive
+                ? "mobile-nav-link active"
+                : "mobile-nav-link"
+            }
+          >
+            <span>07</span>
             Contact
           </NavLink>
 
         </nav>
 
-
         <div className="mobile-status">
-
           <span className="status-dot"></span>
-
           AVAILABLE FOR OPPORTUNITIES
-
         </div>
 
       </div>
-
     </header>
   );
 }

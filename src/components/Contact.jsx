@@ -55,7 +55,6 @@ function Contact() {
       formRef.current.reset();
 
     } catch (error) {
-
       console.error("EmailJS Error:", error);
 
       setStatus({
@@ -65,34 +64,73 @@ function Contact() {
       });
 
     } finally {
-
       setSending(false);
-
     }
   };
 
-
   return (
-    <main className="contact-page">
+    <main
+      className={`contact-page ${
+        sending ? "contact-sending" : ""
+      } ${
+        status.type === "success"
+          ? "contact-success"
+          : ""
+      } ${
+        status.type === "error"
+          ? "contact-error"
+          : ""
+      }`}
+    >
+
+      {/* =====================================================
+          BACKGROUND SYSTEM
+      ===================================================== */}
+
+      <div className="contact-grid-bg"></div>
+
+      <div className="contact-scan-line"></div>
+
+      <div className="contact-glow contact-glow-one"></div>
+      <div className="contact-glow contact-glow-two"></div>
+
+      <div className="contact-signal contact-signal-one"></div>
+      <div className="contact-signal contact-signal-two"></div>
+
 
       <div className="contact-container">
 
-        {/* HEADER */}
+        {/* ===================================================
+            HEADER
+        =================================================== */}
+
         <header className="contact-header">
 
           <div className="contact-system">
+
             <span className="contact-dot"></span>
+
             CONTACT / CONNECT
+
           </div>
 
+
           <p className="contact-command">
-            <span>$</span> ./connect.sh
+
+            <span>$</span>
+
+            <span className="contact-command-text">
+              ./connect.sh
+            </span>
+
           </p>
+
 
           <h1>
             Let's build
             <span> something.</span>
           </h1>
+
 
           <p className="contact-intro">
             I'm open to internship opportunities, projects,
@@ -103,25 +141,79 @@ function Contact() {
         </header>
 
 
-        {/* CONTACT CONTENT */}
+        {/* ===================================================
+            CONNECTION STATUS
+        =================================================== */}
+
+        <section className="contact-connection-status">
+
+          <div className="connection-status-left">
+
+            <span className="connection-pulse"></span>
+
+            <span className="connection-label">
+              SECURE CHANNEL
+            </span>
+
+            <span className="connection-divider">
+              //
+            </span>
+
+            <span className="connection-state">
+              {sending
+                ? "TRANSMITTING"
+                : status.type === "success"
+                ? "TRANSMISSION COMPLETE"
+                : status.type === "error"
+                ? "TRANSMISSION ERROR"
+                : "CHANNEL READY"}
+            </span>
+
+          </div>
+
+
+          <div className="connection-code">
+            TLS://CONTACT
+          </div>
+
+        </section>
+
+
+        {/* ===================================================
+            CONTACT CONTENT
+        =================================================== */}
+
         <section className="contact-grid">
 
-          {/* LEFT SIDE */}
+          {/* =================================================
+              LEFT SIDE
+          ================================================= */}
+
           <div className="contact-info">
 
-            {/* TERMINAL */}
+
+            {/* ===============================================
+                TERMINAL
+            =============================================== */}
+
             <div className="contact-terminal">
 
               <div className="contact-terminal-header">
 
                 <div className="terminal-dots">
+
                   <span></span>
                   <span></span>
                   <span></span>
+
                 </div>
 
                 <span>
                   contact@kiran ~ /portfolio
+                </span>
+
+                <span className="contact-terminal-status">
+                  ONLINE
                 </span>
 
               </div>
@@ -129,34 +221,67 @@ function Contact() {
 
               <div className="contact-terminal-body">
 
-                <div className="contact-terminal-line">
+                <div className="contact-terminal-line contact-line-one">
+
                   <span>$</span>
+
                   whoami
+
                 </div>
 
-                <div className="contact-terminal-output">
+
+                <div className="contact-terminal-output contact-output-one">
+
                   <span>name:</span>
-                  <strong>KIRAN GOWDA D</strong>
+
+                  <strong>
+                    KIRAN GOWDA D
+                  </strong>
+
                 </div>
 
-                <div className="contact-terminal-output">
+
+                <div className="contact-terminal-output contact-output-two">
+
                   <span>role:</span>
-                  <strong>COMPUTER ENGINEERING STUDENT</strong>
+
+                  <strong>
+                    COMPUTER ENGINEERING STUDENT
+                  </strong>
+
                 </div>
 
-                <div className="contact-terminal-output">
+
+                <div className="contact-terminal-output contact-output-three">
+
                   <span>focus:</span>
-                  <strong>CYBERSECURITY + FULL-STACK</strong>
+
+                  <strong>
+                    CYBERSECURITY + FULL-STACK
+                  </strong>
+
                 </div>
 
-                <div className="contact-terminal-output">
+
+                <div className="contact-terminal-output contact-output-four">
+
                   <span>status:</span>
-                  <strong>OPEN TO OPPORTUNITIES</strong>
+
+                  <strong>
+                    OPEN TO OPPORTUNITIES
+                  </strong>
+
                 </div>
+
 
                 <div className="contact-terminal-line contact-terminal-last">
+
                   <span>$</span>
-                  <span className="contact-cursor">_</span>
+
+                  <span className="contact-cursor">
+                    _
+                  </span>
+
                 </div>
 
               </div>
@@ -164,107 +289,141 @@ function Contact() {
             </div>
 
 
-            {/* EMAIL */}
-            <a
-              href="mailto:kirangowda0226@gmail.com"
-              className="contact-method"
-            >
+            {/* ===============================================
+                CONTACT METHODS
+            =============================================== */}
 
-              <div className="contact-method-icon">
-                @
-              </div>
+            <div className="contact-methods">
 
-              <div className="contact-method-content">
 
-                <span className="contact-method-label">
-                  EMAIL
+              {/* EMAIL */}
+
+              <a
+                href="mailto:kirangowda0226@gmail.com"
+                className="contact-method"
+              >
+
+                <div className="contact-method-icon">
+                  @
+                </div>
+
+
+                <div className="contact-method-content">
+
+                  <span className="contact-method-label">
+                    EMAIL
+                  </span>
+
+                  <strong>
+                    kirangowda0226@gmail.com
+                  </strong>
+
+                </div>
+
+
+                <span className="contact-method-arrow">
+                  ↗
                 </span>
 
-                <strong>
-                  kirangowda0226@gmail.com
-                </strong>
-
-              </div>
-
-              <span className="contact-method-arrow">
-                ↗
-              </span>
-
-            </a>
+              </a>
 
 
-            {/* GITHUB */}
-            <a
-              href="https://github.com/Kiran-0226"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="contact-method"
-            >
+              {/* GITHUB */}
 
-              <div className="contact-method-icon">
-                &lt;/&gt;
-              </div>
+              <a
+                href="https://github.com/Kiran-0226"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="contact-method"
+              >
 
-              <div className="contact-method-content">
+                <div className="contact-method-icon">
+                  &lt;/&gt;
+                </div>
 
-                <span className="contact-method-label">
-                  GITHUB
+
+                <div className="contact-method-content">
+
+                  <span className="contact-method-label">
+                    GITHUB
+                  </span>
+
+                  <strong>
+                    github.com/Kiran-0226
+                  </strong>
+
+                </div>
+
+
+                <span className="contact-method-arrow">
+                  ↗
                 </span>
 
-                <strong>
-                  github.com/Kiran-0226
-                </strong>
-
-              </div>
-
-              <span className="contact-method-arrow">
-                ↗
-              </span>
-
-            </a>
+              </a>
 
 
-            {/* LINKEDIN */}
-            <a
-              href="https://www.linkedin.com/in/kiran-gowda-d-57114b329/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="contact-method"
-            >
+              {/* LINKEDIN */}
 
-              <div className="contact-method-icon">
-                in
-              </div>
+              <a
+                href="https://www.linkedin.com/in/kiran-gowda-d-57114b329/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="contact-method"
+              >
 
-              <div className="contact-method-content">
+                <div className="contact-method-icon">
+                  in
+                </div>
 
-                <span className="contact-method-label">
-                  LINKEDIN
+
+                <div className="contact-method-content">
+
+                  <span className="contact-method-label">
+                    LINKEDIN
+                  </span>
+
+                  <strong>
+                    linkedin.com/in/kiran-gowda-d-57114b329
+                  </strong>
+
+                </div>
+
+
+                <span className="contact-method-arrow">
+                  ↗
                 </span>
 
-                <strong>
-                  linkedin.com/in/kiran-gowda-d-57114b329
-                </strong>
+              </a>
 
-              </div>
-
-              <span className="contact-method-arrow">
-                ↗
-              </span>
-
-            </a>
+            </div>
 
           </div>
 
 
-          {/* RIGHT SIDE */}
+          {/* =================================================
+              RIGHT SIDE
+          ================================================= */}
+
           <div className="contact-message">
 
             <div className="contact-message-header">
-              <span>01</span>
-              SEND A MESSAGE
+
+              <span>
+                01
+              </span>
+
+              <span>
+                SEND A MESSAGE
+              </span>
+
+              <span className="message-header-status">
+                ENCRYPTED
+              </span>
+
             </div>
 
+
+            {/* FORM */}
 
             <form
               ref={formRef}
@@ -272,147 +431,265 @@ function Contact() {
               onSubmit={handleSubmit}
             >
 
-              {/* NAME */}
+
+              {/* =============================================
+                  NAME
+              ============================================= */}
+
               <div className="contact-form-group">
 
                 <label htmlFor="name">
                   NAME
                 </label>
 
-                <input
-                  id="name"
-                  name="name"
-                  type="text"
-                  placeholder="Your name"
-                  autoComplete="name"
-                  required
-                  disabled={sending}
-                />
+
+                <div className="contact-input-wrapper">
+
+                  <span className="input-prefix">
+                    &gt;
+                  </span>
+
+                  <input
+                    id="name"
+                    name="name"
+                    type="text"
+                    placeholder="Your name"
+                    autoComplete="name"
+                    required
+                    disabled={sending}
+                  />
+
+                  <span className="input-status">
+                    ●
+                  </span>
+
+                </div>
 
               </div>
 
 
-              {/* EMAIL */}
+              {/* =============================================
+                  EMAIL
+              ============================================= */}
+
               <div className="contact-form-group">
 
                 <label htmlFor="email">
                   EMAIL
                 </label>
 
-                <input
-                  id="email"
-                  name="email"
-                  type="email"
-                  placeholder="your@email.com"
-                  autoComplete="email"
-                  required
-                  disabled={sending}
-                />
+
+                <div className="contact-input-wrapper">
+
+                  <span className="input-prefix">
+                    &gt;
+                  </span>
+
+                  <input
+                    id="email"
+                    name="email"
+                    type="email"
+                    placeholder="your@email.com"
+                    autoComplete="email"
+                    required
+                    disabled={sending}
+                  />
+
+                  <span className="input-status">
+                    ●
+                  </span>
+
+                </div>
 
               </div>
 
 
-              {/* SUBJECT */}
+              {/* =============================================
+                  SUBJECT
+              ============================================= */}
+
               <div className="contact-form-group">
 
                 <label htmlFor="subject">
                   SUBJECT
                 </label>
 
-                <input
-                  id="subject"
-                  name="subject"
-                  type="text"
-                  placeholder="What would you like to discuss?"
-                  required
-                  disabled={sending}
-                />
+
+                <div className="contact-input-wrapper">
+
+                  <span className="input-prefix">
+                    &gt;
+                  </span>
+
+                  <input
+                    id="subject"
+                    name="subject"
+                    type="text"
+                    placeholder="What would you like to discuss?"
+                    required
+                    disabled={sending}
+                  />
+
+                  <span className="input-status">
+                    ●
+                  </span>
+
+                </div>
 
               </div>
 
 
-              {/* MESSAGE */}
+              {/* =============================================
+                  MESSAGE
+              ============================================= */}
+
               <div className="contact-form-group">
 
                 <label htmlFor="message">
                   MESSAGE
                 </label>
 
-                <textarea
-                  id="message"
-                  name="message"
-                  rows="6"
-                  placeholder="Write your message..."
-                  required
-                  disabled={sending}
-                ></textarea>
+
+                <div className="contact-input-wrapper textarea-wrapper">
+
+                  <span className="input-prefix textarea-prefix">
+                    &gt;
+                  </span>
+
+                  <textarea
+                    id="message"
+                    name="message"
+                    rows="6"
+                    placeholder="Write your message..."
+                    required
+                    disabled={sending}
+                  ></textarea>
+
+                </div>
 
               </div>
 
 
-              {/* STATUS MESSAGE */}
-              {status.message && (
-                <div
-                  className="contact-form-status"
-                  aria-live="polite"
-                  style={{
-                    marginBottom: "10px",
-                    padding: "9px 10px",
-                    border: `1px solid ${
-                      status.type === "success"
-                        ? "rgba(0, 255, 136, 0.35)"
-                        : "rgba(255, 80, 80, 0.35)"
-                    }`,
-                    background:
-                      status.type === "success"
-                        ? "rgba(0, 255, 136, 0.04)"
-                        : "rgba(255, 80, 80, 0.04)",
-                    color:
-                      status.type === "success"
-                        ? "#00ff88"
-                        : "#ff7070",
-                    fontFamily: '"Courier New", monospace',
-                    fontSize: "9px",
-                    lineHeight: "1.5",
-                  }}
-                >
-                  <span>
-                    {status.type === "success"
-                      ? "✓ "
-                      : "✕ "}
-                  </span>
+              {/* =============================================
+                  TRANSMISSION STATUS
+              ============================================= */}
 
-                  {status.message}
+              {sending && (
+                <div className="contact-transmission">
+
+                  <div className="transmission-header">
+
+                    <span>
+                      $ ./transmit_message.sh
+                    </span>
+
+                    <span>
+                      ACTIVE
+                    </span>
+
+                  </div>
+
+
+                  <div className="transmission-bar">
+
+                    <span></span>
+
+                  </div>
+
+
+                  <div className="transmission-info">
+
+                    <span>
+                      ENCRYPTING PAYLOAD
+                    </span>
+
+                    <span className="transmission-dots">
+                      ...
+                    </span>
+
+                  </div>
+
                 </div>
               )}
 
 
-              {/* SUBMIT BUTTON */}
+              {/* =============================================
+                  STATUS MESSAGE
+              ============================================= */}
+
+              {status.message && (
+
+                <div
+                  className={`contact-form-status ${
+                    status.type === "success"
+                      ? "status-success"
+                      : "status-error"
+                  }`}
+                  aria-live="polite"
+                >
+
+                  <span className="status-icon">
+
+                    {status.type === "success"
+                      ? "✓"
+                      : "✕"}
+
+                  </span>
+
+
+                  <div>
+
+                    <strong>
+                      {status.type === "success"
+                        ? "TRANSMISSION COMPLETE"
+                        : "TRANSMISSION FAILED"}
+                    </strong>
+
+                    <p>
+                      {status.message}
+                    </p>
+
+                  </div>
+
+                </div>
+
+              )}
+
+
+              {/* =============================================
+                  SUBMIT BUTTON
+              ============================================= */}
+
               <button
                 type="submit"
                 className="contact-submit"
                 disabled={sending}
-                style={{
-                  opacity: sending ? 0.7 : 1,
-                  cursor: sending
-                    ? "not-allowed"
-                    : "pointer",
-                }}
               >
 
-                <span>
+                <span className="submit-prefix">
                   $
                 </span>
 
-                {sending
-                  ? "SENDING..."
-                  : "SEND MESSAGE"}
 
-                <span>
-                  {sending ? "..." : "↗"}
+                <span className="submit-text">
+
+                  {sending
+                    ? "TRANSMITTING..."
+                    : "TRANSMIT MESSAGE"}
+
+                </span>
+
+
+                <span className="submit-arrow">
+
+                  {sending
+                    ? "..."
+                    : "↗"}
+
                 </span>
 
               </button>
+
 
             </form>
 
@@ -421,22 +698,64 @@ function Contact() {
         </section>
 
 
-        {/* FOOTER TERMINAL */}
+        {/* ===================================================
+            FOOTER TERMINAL
+        =================================================== */}
+
         <section className="contact-footer-terminal">
 
           <div className="contact-footer-line">
-            <span>$</span>
+
+            <span>
+              $
+            </span>
+
             echo "Thanks for stopping by."
+
           </div>
 
+
           <div className="contact-footer-line">
+
             <span className="contact-footer-success">
               ✓
             </span>
+
             connection_ready
+
+          </div>
+
+
+          <div className="contact-footer-line">
+
+            <span>
+              $
+            </span>
+
+            <span className="contact-footer-cursor">
+              _
+            </span>
+
           </div>
 
         </section>
+
+      </div>
+
+
+      {/* =====================================================
+          BOTTOM SYSTEM LINE
+      ===================================================== */}
+
+      <div className="contact-bottom-line">
+
+        <span></span>
+
+        <span>
+          07 / CONTACT
+        </span>
+
+        <span></span>
 
       </div>
 

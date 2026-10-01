@@ -1,101 +1,211 @@
+import { Link } from "react-router-dom";
+
 import "./Hero.css";
 
 function Hero() {
   return (
-    <main className="hero">
+    <main className="hero-page">
+
+      {/* =====================================================
+          BACKGROUND SYSTEM
+      ===================================================== */}
+
+      <div className="hero-grid"></div>
+
+      <div className="hero-scan-line"></div>
+
+      <div className="hero-glow hero-glow-one"></div>
+      <div className="hero-glow hero-glow-two"></div>
+
+
+      {/* =====================================================
+          MAIN CONTAINER
+      ===================================================== */}
 
       <div className="hero-container">
 
-        {/* =========================
-            LEFT SIDE
-        ========================== */}
+        {/* ===================================================
+            HERO CONTENT
+        =================================================== */}
 
         <section className="hero-content">
 
-          {/* System Status */}
-          <div className="hero-system">
-            <span className="system-dot"></span>
-            SYSTEM INITIALIZED
+          {/* System status */}
+
+          <div className="hero-system-status">
+
+            <span className="hero-status-dot"></span>
+
+            <span className="hero-status-text">
+              SYSTEM INITIALIZED
+            </span>
+
           </div>
 
-          {/* Greeting */}
-          <p className="hero-greeting">
+
+          {/* Intro */}
+
+          <p className="hero-intro">
             Hello, I'm
           </p>
 
+
           {/* Name */}
+
           <h1 className="hero-name">
-            KIRAN GOWDA D<span>.</span>
+            KIRAN GOWDA D
+            <span className="hero-name-dot">.</span>
           </h1>
 
+
           {/* Role */}
-          <h2 className="hero-title">
-            Cybersecurity Enthusiast
-            <br />
-            <span>&amp; Full-Stack Developer</span>
-          </h2>
+
+          <div className="hero-role">
+
+            <span className="hero-role-primary">
+              Cybersecurity Enthusiast
+            </span>
+
+            <span className="hero-role-divider">
+              /
+            </span>
+
+            <span className="hero-role-secondary">
+              Full-Stack Developer
+            </span>
+
+          </div>
+
 
           {/* Description */}
+
           <p className="hero-description">
-            I build modern web applications and explore cybersecurity,
-            ethical hacking, and secure software development.
+            I build modern web applications while exploring
+            cybersecurity, ethical hacking, web security,
+            networking, and secure software development.
           </p>
 
-          {/* Buttons */}
+
+          {/* =================================================
+              ACTIONS
+          ================================================= */}
+
           <div className="hero-actions">
 
-            <a
-              href="/projects"
-              className="hero-button primary"
+            <Link
+              to="/projects"
+              className="hero-button hero-button-primary"
             >
-              View Projects
-              <span>→</span>
-            </a>
+              <span>View Projects</span>
 
-            <a
-              href="/contact"
-              className="hero-button secondary"
+              <span className="hero-button-arrow">
+                →
+              </span>
+            </Link>
+
+
+            <Link
+              to="/resume"
+              className="hero-button hero-button-resume"
+            >
+              <span>View Resume</span>
+
+              <span className="hero-button-arrow">
+                ↗
+              </span>
+            </Link>
+
+
+            <Link
+              to="/contact"
+              className="hero-button hero-button-secondary"
             >
               Contact Me
+            </Link>
+
+          </div>
+
+
+          {/* =================================================
+              SOCIALS
+          ================================================= */}
+
+          <div className="hero-socials">
+
+            <a
+              href="https://github.com/Kiran-0226"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hero-social-link"
+            >
+              <span className="hero-social-icon">
+                &lt;/&gt;
+              </span>
+
+              GitHub
+            </a>
+
+
+            <a
+              href="https://www.linkedin.com/in/kiran-gowda-d-57114b329"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hero-social-link"
+            >
+              <span className="hero-social-icon">
+                in
+              </span>
+
+              LinkedIn
             </a>
 
           </div>
 
-          {/* Information */}
-          <div className="hero-meta">
 
-            <div className="meta-item">
+          {/* =================================================
+              INFORMATION
+          ================================================= */}
 
-              <span className="meta-label">
+          <div className="hero-info">
+
+            <div className="hero-info-item">
+
+              <span className="hero-info-label">
                 FOCUS
               </span>
 
-              <span className="meta-value">
+              <span className="hero-info-value">
                 Cybersecurity
               </span>
 
             </div>
 
-            <div className="meta-item">
 
-              <span className="meta-label">
+            <div className="hero-info-item">
+
+              <span className="hero-info-label">
                 STACK
               </span>
 
-              <span className="meta-value">
+              <span className="hero-info-value">
                 Full-Stack
               </span>
 
             </div>
 
-            <div className="meta-item">
 
-              <span className="meta-label">
+            <div className="hero-info-item">
+
+              <span className="hero-info-label">
                 STATUS
               </span>
 
-              <span className="meta-value active">
-                ● Building
+              <span className="hero-info-value hero-info-online">
+
+                <span className="hero-mini-dot"></span>
+
+                Building
+
               </span>
 
             </div>
@@ -105,16 +215,17 @@ function Hero() {
         </section>
 
 
-        {/* =========================
-            RIGHT SIDE TERMINAL
-        ========================== */}
+        {/* ===================================================
+            TERMINAL
+        =================================================== */}
 
         <section className="hero-terminal">
 
-          {/* Terminal Header */}
-          <div className="terminal-topbar">
+          {/* Terminal header */}
 
-            <div className="terminal-buttons">
+          <div className="hero-terminal-header">
+
+            <div className="hero-terminal-dots">
 
               <span></span>
               <span></span>
@@ -122,70 +233,124 @@ function Hero() {
 
             </div>
 
-            <div className="terminal-name">
-              kiran@portfolio
-            </div>
+            <span className="hero-terminal-title">
+              kiran@portfolio:~
+            </span>
+
+            <span className="hero-terminal-live">
+              LIVE
+            </span>
 
           </div>
 
 
-          {/* Terminal Content */}
-          <div className="terminal-content">
+          {/* Terminal body */}
+
+          <div className="hero-terminal-body">
 
             {/* Command */}
-            <div className="terminal-command">
 
-              <span className="terminal-green">
+            <div className="terminal-command terminal-command-first">
+
+              <span className="terminal-prompt">
                 $
               </span>
 
-              whoami
+              <span>
+                whoami
+              </span>
 
             </div>
 
-            {/* Result */}
-            <div className="terminal-result">
+
+            {/* Output */}
+
+            <div className="terminal-output terminal-output-name">
               kiran_gowda_d
             </div>
 
 
             {/* Command */}
-            <div className="terminal-command">
 
-              <span className="terminal-green">
+            <div className="terminal-command terminal-command-gap">
+
+              <span className="terminal-prompt">
                 $
               </span>
 
-              cat role.txt
+              <span>
+                cat role.txt
+              </span>
 
             </div>
 
-            {/* Result */}
-            <div className="terminal-result">
 
+            {/* Output */}
+
+            <div className="terminal-output">
               Cybersecurity Enthusiast
-              <br />
+            </div>
+
+            <div className="terminal-output">
               Full-Stack Developer
+            </div>
+
+
+            {/* Command */}
+
+            <div className="terminal-command terminal-command-gap">
+
+              <span className="terminal-prompt">
+                $
+              </span>
+
+              <span>
+                cat focus.txt
+              </span>
+
+            </div>
+
+
+            {/* Focus output */}
+
+            <div className="terminal-output terminal-focus-output">
+
+              <span>
+                Web Security
+              </span>
+
+              <span>
+                Ethical Hacking
+              </span>
+
+              <span>
+                Secure Development
+              </span>
 
             </div>
 
 
             {/* Command */}
-            <div className="terminal-command">
 
-              <span className="terminal-green">
+            <div className="terminal-command terminal-command-gap">
+
+              <span className="terminal-prompt">
                 $
               </span>
 
-              system --status
+              <span>
+                system --status
+              </span>
 
             </div>
 
 
-            {/* System Status */}
-            <div className="terminal-status">
+            {/* Status box */}
 
-              <div>
+            <div className="terminal-status-box">
+
+              <div className="terminal-status-row">
+
                 <span>
                   user
                 </span>
@@ -193,10 +358,12 @@ function Hero() {
                 <strong>
                   KIRAN GOWDA D
                 </strong>
+
               </div>
 
 
-              <div>
+              <div className="terminal-status-row">
+
                 <span>
                   environment
                 </span>
@@ -204,10 +371,12 @@ function Hero() {
                 <strong>
                   development
                 </strong>
+
               </div>
 
 
-              <div>
+              <div className="terminal-status-row">
+
                 <span>
                   security
                 </span>
@@ -215,30 +384,49 @@ function Hero() {
                 <strong>
                   learning
                 </strong>
+
               </div>
 
 
-              <div>
+              <div className="terminal-status-row">
+
+                <span>
+                  projects
+                </span>
+
+                <strong>
+                  active
+                </strong>
+
+              </div>
+
+
+              <div className="terminal-status-row">
+
                 <span>
                   status
                 </span>
 
-                <strong className="online">
+                <strong className="terminal-online">
                   ● online
                 </strong>
+
               </div>
 
             </div>
 
 
-            {/* Final Command */}
-            <div className="terminal-command last-command">
+            {/* Final command */}
 
-              <span className="terminal-green">
+            <div className="terminal-command terminal-final-command">
+
+              <span className="terminal-prompt">
                 $
               </span>
 
-              ./build-future.sh
+              <span>
+                ./build-future.sh
+              </span>
 
               <span className="terminal-cursor">
                 _
@@ -249,6 +437,23 @@ function Hero() {
           </div>
 
         </section>
+
+      </div>
+
+
+      {/* =====================================================
+          BOTTOM SYSTEM LINE
+      ===================================================== */}
+
+      <div className="hero-bottom-line">
+
+        <span></span>
+
+        <span>
+          01 / HOME
+        </span>
+
+        <span></span>
 
       </div>
 
