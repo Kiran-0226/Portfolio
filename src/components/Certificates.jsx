@@ -7,6 +7,7 @@ import BB from "../assets/BB.jpg";
 import BCA from "../assets/BCA.jpg";
 import CN from "../assets/CN.jpg";
 import ISE from "../assets/ISE.jpg";
+import FC from "../assets/FC.jpg";
 
 function Certificates() {
   const certificates = [
@@ -86,6 +87,17 @@ function Certificates() {
       verification:
         "https://coursera.org/verify/WXQGT8UWANUM",
     },
+
+    {
+      number: "08",
+      title: "Foundations of Cybersecurity",
+      issuer: "Google",
+      platform: "Coursera",
+      date: "Oct 03, 2026",
+      image: FC,
+      verification:
+        "https://www.coursera.org/account/accomplishments/records/NVVLI16BG4HM",
+    },
   ];
 
   return (
@@ -129,7 +141,9 @@ function Certificates() {
 
           <p className="certificates-command">
 
-            <span>$</span>
+            <span>
+              $
+            </span>
 
             <span>
               ls certificates/
@@ -218,7 +232,9 @@ function Certificates() {
                       className="certificate-view-image"
                     >
                       VIEW CERTIFICATE
-                      <span>↗</span>
+                      <span>
+                        ↗
+                      </span>
                     </a>
 
                   </div>
