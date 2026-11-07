@@ -1,3 +1,4 @@
+
 import "./Projects.css";
 
 function Projects() {
@@ -24,59 +25,49 @@ function Projects() {
 
     {
       number: "02",
-      title: "VISIONSCOP-AI",
-      type: "AI APPLICATION",
+      title: "DEXTRA",
+      type: "AI ASSISTANT APPLICATION",
       description:
-        "An AI-powered project currently under development, focused on exploring intelligent computer-based solutions and practical AI applications.",
+        "An AI-powered assistant web application featuring conversational AI and AI image generation, built to explore practical AI integration in a modern web experience.",
       stack: [
         "React",
         "JavaScript",
-        "AI",
         "Node.js",
+        "Gemini AI",
+        "AI Image Generation",
       ],
-      status: "IN DEVELOPMENT",
+      status: "LIVE",
       github:
-        "https://github.com/Kiran-0226/visionscope-ai",
-      demo: null,
+        "https://github.com/Kiran-0226/Dextra",
+      demo:
+        "https://dextra-ten.vercel.app/",
     },
   ];
 
   return (
     <main className="projects-page">
 
-      {/* =====================================================
-          BACKGROUND
-      ===================================================== */}
+      {/* BACKGROUND */}
 
       <div className="projects-grid-bg"></div>
-
       <div className="projects-scan-line"></div>
-
       <div className="projects-glow projects-glow-one"></div>
-
       <div className="projects-glow projects-glow-two"></div>
 
-
-      {/* =====================================================
-          MAIN CONTAINER
-      ===================================================== */}
+      {/* MAIN CONTAINER */}
 
       <div className="projects-container">
 
-        {/* ===================================================
-            HEADER
-        =================================================== */}
+        {/* HEADER */}
 
         <header className="projects-header">
 
           <div className="projects-system">
             <span className="projects-dot"></span>
-
             PROJECTS / WORK
           </div>
 
           <p className="projects-command">
-
             <span className="projects-command-symbol">
               $
             </span>
@@ -84,7 +75,6 @@ function Projects() {
             <span>
               ls projects/
             </span>
-
           </p>
 
           <h1>
@@ -93,17 +83,13 @@ function Projects() {
           </h1>
 
           <p className="projects-intro">
-            A collection of projects I've worked on while
-            exploring software development, artificial
-            intelligence, and cybersecurity.
+            A collection of projects I've built while exploring full-stack
+            development, artificial intelligence, and cybersecurity.
           </p>
 
         </header>
 
-
-        {/* ===================================================
-            PROJECT CARDS
-        =================================================== */}
+        {/* PROJECT CARDS */}
 
         <section className="projects-list">
 
@@ -114,9 +100,7 @@ function Projects() {
               key={project.number}
             >
 
-              {/* -----------------------------------------------
-                  CARD HEADER
-              ----------------------------------------------- */}
+              {/* CARD HEADER */}
 
               <div className="project-top">
 
@@ -136,26 +120,16 @@ function Projects() {
 
                 </div>
 
-                <div
-                  className={`project-status ${
-                    project.status === "IN DEVELOPMENT"
-                      ? "project-status-development"
-                      : ""
-                  }`}
-                >
+                <div className="project-status">
 
                   <span></span>
-
                   {project.status}
 
                 </div>
 
               </div>
 
-
-              {/* -----------------------------------------------
-                  CARD CONTENT
-              ----------------------------------------------- */}
+              {/* CARD CONTENT */}
 
               <div className="project-content">
 
@@ -196,10 +170,7 @@ function Projects() {
 
               </div>
 
-
-              {/* -----------------------------------------------
-                  CARD FOOTER
-              ----------------------------------------------- */}
+              {/* CARD FOOTER */}
 
               <div className="project-footer">
 
@@ -258,23 +229,18 @@ function Projects() {
 
         </section>
 
-
-        {/* ===================================================
-            TERMINAL
-        =================================================== */}
+        {/* TERMINAL */}
 
         <section className="projects-terminal">
 
-          {/* Terminal Header */}
+          {/* TERMINAL HEADER */}
 
           <div className="projects-terminal-header">
 
             <div className="terminal-dots">
-
               <span></span>
               <span></span>
               <span></span>
-
             </div>
 
             <span className="projects-terminal-title">
@@ -287,14 +253,11 @@ function Projects() {
 
           </div>
 
-
-          {/* Terminal Body */}
+          {/* TERMINAL BODY */}
 
           <div className="projects-terminal-body">
 
-            {/* -----------------------------------------------
-                COMMAND
-            ----------------------------------------------- */}
+            {/* COMMAND */}
 
             <div className="terminal-line terminal-command-one">
 
@@ -308,10 +271,7 @@ function Projects() {
 
             </div>
 
-
-            {/* -----------------------------------------------
-                PROJECT 01
-            ----------------------------------------------- */}
+            {/* PROJECT 01 */}
 
             <div className="terminal-project-row">
 
@@ -329,10 +289,7 @@ function Projects() {
 
             </div>
 
-
-            {/* -----------------------------------------------
-                PROJECT 02
-            ----------------------------------------------- */}
+            {/* PROJECT 02 */}
 
             <div className="terminal-project-row">
 
@@ -341,19 +298,16 @@ function Projects() {
               </span>
 
               <span className="terminal-project-name">
-                visionscope-ai
+                dextra
               </span>
 
-              <span className="terminal-project-status terminal-development">
-                IN DEVELOPMENT
+              <span className="terminal-project-status terminal-active">
+                LIVE
               </span>
 
             </div>
 
-
-            {/* -----------------------------------------------
-                STATUS COMMAND
-            ----------------------------------------------- */}
+            {/* STATUS COMMAND */}
 
             <div className="terminal-line terminal-status-command">
 
@@ -367,10 +321,7 @@ function Projects() {
 
             </div>
 
-
-            {/* -----------------------------------------------
-                STATUS OUTPUT
-            ----------------------------------------------- */}
+            {/* STATUS OUTPUT */}
 
             <div className="terminal-status-output">
 
@@ -384,10 +335,7 @@ function Projects() {
 
             </div>
 
-
-            {/* -----------------------------------------------
-                FINAL COMMAND
-            ----------------------------------------------- */}
+            {/* FINAL COMMAND */}
 
             <div className="terminal-line terminal-last-line">
 
@@ -407,10 +355,7 @@ function Projects() {
 
       </div>
 
-
-      {/* =====================================================
-          BOTTOM PAGE INDICATOR
-      ===================================================== */}
+      {/* BOTTOM PAGE INDICATOR */}
 
       <div className="projects-bottom-line">
 
